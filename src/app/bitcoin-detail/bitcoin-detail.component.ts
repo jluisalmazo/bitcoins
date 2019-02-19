@@ -47,12 +47,10 @@ export class BitcoinDetailComponent implements OnInit {
             console.log(err);
           }
         );
-    
 
         this.bitcoin_Name = res['data']['name'];
         this.bitcoin_Rank = res['data']['rank']
         this.bitcoin_USDprice = res['data']['quotes']['USD']['price'];
-        //this.usdExchangeRate = 0;
         this.MXN = 0;
         this.bitcoin_toMXN = 0;
 
@@ -72,6 +70,20 @@ export class BitcoinDetailComponent implements OnInit {
       }
     );
 
+  }
+
+  /**
+   * Calcula cuantos bitcoins se podrían comprar con N pesos.
+   */
+   calculateMxnToBitcoin(){
+    this.bitcoin_toMXN = this.MXN / (this.bitcoin_USDprice * this.USD_exchangeRate);
+  }
+
+  /**
+   * Calcula cuantos pesos se podrían comprar con N bitcoins. 
+   */
+  calculateBitcoinToMX(){
+    this.MXN = this.bitcoin_toMXN * (this.bitcoin_USDprice * this.USD_exchangeRate);
   }
 
   gotoPreviousPage() {

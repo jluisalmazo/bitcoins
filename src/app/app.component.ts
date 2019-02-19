@@ -9,9 +9,4 @@ export class AppComponent {
 
   constructor() {
   }
-
-
-
-  
-
 }

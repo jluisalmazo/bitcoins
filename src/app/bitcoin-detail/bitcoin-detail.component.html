@@ -7,18 +7,6 @@
   </div>
   
   <div class="card-content" *ngIf="ready">        
-    <!-- <div>{{ bitcoin_Id }}</div> -->
-    <!-- <div><span>Rank: </span>Rank: {{ bitcoin_Rank }}</div>
-    <div>USD Price: {{ bitcoin_USDprice }}</div>
-    <div>USD Exchange Rate: {{ USD_exchangeRate }}</div>
-    <div>MXN {{ MXN }}</div>
-    <div>COIN to MXN: {{ bitcoin_toMXN }}</div>
-    <div>Hola hoy es: {{ todayAsString }}</div>
-
-    <input type="text" name="mxn" />
-    <input type="text" name="coinToMX" /> -->
-
-    
     <table>
       <tbody>
         <tr>
@@ -39,11 +27,11 @@
         </tr>
         <tr>
           <td><span>MXN:</span></td>
-          <td class="data">{{ MXN }}</td>
+          <td class="data"><input type="number" [(ngModel)]="MXN" (ngModelChange)="calculateMxnToBitcoin()"/></td>
         </tr>
         <tr>
-          <td><span>COIN to MXN:</span></td>
-          <td class="data">{{ bitcoin_toMXN }}</td>
+          <td><span>Bitcoin to MXN:</span></td>
+          <td class="data"><input type="number" [(ngModel)]="bitcoin_toMXN" (ngModelChange)="calculateBitcoinToMX()"/></td>
         </tr>
         <tr>
           <td><span>Hola hoy es:</span></td>
