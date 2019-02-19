@@ -1,0 +1,35 @@
+.card {
+    width: 50%;
+    margin-left: 15px;
+
+    .data {
+        color: #999;
+    }
+}
+
+.btn-back {
+    color: #159588;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+
+    & > i {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .card {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .card {
+        width: 90%;
+    }
+}

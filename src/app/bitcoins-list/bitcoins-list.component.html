@@ -1,0 +1,9 @@
+
+<h5>Lista de Bitcoins:</h5>
+
+<div class="progress" *ngIf="!ready">
+  <div class="indeterminate"></div>
+</div>
+<div class="collection" *ngIf="ready">
+  <a routerLink="/bitcoinDetail/{{ bitcoin['id'] }}" class="collection-item" *ngFor="let bitcoin of bitcoins">{{ bitcoin['name'] }}<i class="material-icons right">chevron_right</i></a>
+</div>
